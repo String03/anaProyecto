@@ -1,16 +1,40 @@
-import { Component,Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 
 @Component({
     selector: 'app-product',
     templateUrl: './product.component.html'
 })
-export class ProductComponent{
+export class ProductComponent implements OnChanges, OnInit{
     @Input() product: Product;
+    @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
-    addCarrito()
+
+    constructor()
+    {
+        console.log('constructor');
+    }
+
+
+    // tslint:disable-next-line: typedef
+    ngOnChanges(changes: SimpleChanges)
+    {
+        console.log('ngOnChanges');
+        console.log(changes);
+    }
+
+
+    // tslint:disable-next-line: typedef
+    ngOnInit()
+    {
+        console.log('3. ngOnInit');
+    }
+
+    // tslint:disable-next-line: typedef
+    addCart()
     {
         console.log('Añadir al carrito');
+        this.productClicked.emit(this.product.id);
     }
 
 
