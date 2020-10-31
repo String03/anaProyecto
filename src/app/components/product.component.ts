@@ -1,11 +1,11 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck } from '@angular/core';
 import { Product } from '../product.model';
 
 @Component({
     selector: 'app-product',
     templateUrl: './product.component.html'
 })
-export class ProductComponent implements OnChanges, OnInit{
+export class ProductComponent implements OnInit, DoCheck{
     @Input() product: Product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
@@ -16,12 +16,12 @@ export class ProductComponent implements OnChanges, OnInit{
     }
 
 
-    // tslint:disable-next-line: typedef
-    ngOnChanges(changes: SimpleChanges)
-    {
-        console.log('ngOnChanges');
-        console.log(changes);
-    }
+
+    // ngOnChanges(changes: SimpleChanges)
+    // {
+    //     console.log('ngOnChanges');
+    //     console.log(changes);
+    // }
 
 
     // tslint:disable-next-line: typedef
@@ -29,6 +29,14 @@ export class ProductComponent implements OnChanges, OnInit{
     {
         console.log('3. ngOnInit');
     }
+
+
+    // tslint:disable-next-line: typedef
+    ngDoCheck()
+    {
+        console.log('4. ngOnInit');
+    }
+
 
     // tslint:disable-next-line: typedef
     addCart()
