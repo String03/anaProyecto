@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "anaProyecto"
+    }
+  },
+  "defaultProject": "anaProyecto",
+  "cli": {
+    "analytics": "e5f2dca4-a159-44e4-b79f-35a2cdc1e113"
+  }
 }
