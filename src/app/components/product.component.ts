@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { Product } from '../product.model';
 
 @Component({
@@ -6,13 +6,8 @@ import { Product } from '../product.model';
     templateUrl: './product.component.html'
 })
 export class ProductComponent{
-    product: Product = {
-        id: '1',
-        image: 'assets/images/muffin_de_vainilla.png',
-        title: 'muffin de vainilla',
-        price: 100,
-        description: 'dulce'
-    };
+    @Input() product: Product;
+
 
 // tslint:disable-next-line: eofline
 }
