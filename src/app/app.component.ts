@@ -10,6 +10,7 @@ import { Product } from './product.model';
 export class AppComponent {
   title = 'anaProyecto';
   items = ['ana', 'laura', 'claudia'];
+  power = 10;
 
 
 
