@@ -1,4 +1,12 @@
-import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { Component,
+    Input,
+    Output,
+    EventEmitter,
+    OnChanges,
+    SimpleChanges,
+    OnInit,
+    DoCheck,
+    OnDestroy } from '@angular/core';
 import { Product } from '../product.model';
 
 @Component({
